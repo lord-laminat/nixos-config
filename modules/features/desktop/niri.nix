@@ -17,6 +17,7 @@
         pkgs.swayidle
         pkgs.libsecret
         pkgs.matugen
+        pkgs.go
       ];
     };
     security.polkit.enable = true;

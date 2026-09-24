@@ -110,8 +110,8 @@
 
         theme = {
           mode = "system";
-          light = "One Light";
-          dark = "One Dark";
+          light = "iNiR Light";
+          dark = "iNiR Dark";
         };
 
         show_whitespaces = "all";
