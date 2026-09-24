@@ -8,7 +8,6 @@
       terminal
       libreoffice
       vscode
-      zed
       neovim
       dotnet
       python
