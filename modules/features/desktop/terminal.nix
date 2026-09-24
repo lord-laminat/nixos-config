@@ -7,16 +7,24 @@
 
   flake.modules.homeManager.terminal = { pkgs, ... }: {
 
-    home.programs.nushell = {
+    programs.nushell = {
       enable = true;
       extraConfig = ''
         $env.config.show_banner = false
       '';
     };
 
-    home.programs.starship = {
+    programs.starship = {
       enable = true;
       enableNushellIntegration = true;
+    };
+
+    programs.ghostty = {
+      enable = true;
+      settings = {
+        command = "nu";
+        theme = "ii-auto";
+      };
     };
   };
 }
