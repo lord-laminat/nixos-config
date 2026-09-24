@@ -28,6 +28,7 @@
         ./modules/flake/checks.nix
         ./modules/flake/devshell.nix
         ./modules/features/system/networking.nix
+        ./modules/features/system/bluetooth.nix
         ./modules/features/system/locale.nix
         ./modules/features/system/utilities.nix
         ./modules/features/desktop/ly.nix

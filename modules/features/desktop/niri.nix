@@ -17,6 +17,8 @@
         pkgs.swayidle
         pkgs.libsecret
         pkgs.matugen
+        pkgs.awww
+        pkgs.gowall
         pkgs.go
       ];
     };

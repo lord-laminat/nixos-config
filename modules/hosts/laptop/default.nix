@@ -9,6 +9,7 @@ in
       rychkin
       laptop-hardware
       networking
+      bluetooth
       locale
       utilities
       niri
