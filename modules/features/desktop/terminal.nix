@@ -23,6 +23,8 @@
       enable = true;
       settings = {
         command = "nu";
+        background-opacity = 0.9;
+        background-blur-radius = 20;
         theme = "ii-auto";
       };
     };

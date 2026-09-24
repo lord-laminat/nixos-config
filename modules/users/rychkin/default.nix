@@ -15,6 +15,7 @@
     imports = [ config.flake.modules.homeManager.nix ];
     home.username = "rychkin";
     home.homeDirectory = "/home/rychkin";
+    
     # Initial Home Manager compatibility baseline; not the package version.
     home.stateVersion = "26.05";
   };

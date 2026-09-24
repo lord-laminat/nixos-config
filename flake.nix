@@ -29,7 +29,6 @@
         ./modules/flake/devshell.nix
         ./modules/features/system/networking.nix
         ./modules/features/system/locale.nix
-        ./modules/features/system/compatibility.nix
         ./modules/features/system/utilities.nix
         ./modules/features/desktop/ly.nix
         ./modules/features/desktop/niri.nix
@@ -41,6 +40,7 @@
         ./modules/features/applications/ayugram.nix
         ./modules/features/applications/libreoffice.nix
         ./modules/features/development/vscode.nix
+        ./modules/features/development/zed.nix
         ./modules/features/development/neovim.nix
         ./modules/features/development/dotnet.nix
         ./modules/features/development/python.nix

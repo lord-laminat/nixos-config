@@ -10,7 +10,6 @@ in
       laptop-hardware
       networking
       locale
-      compatibility
       utilities
       niri
       terminal
