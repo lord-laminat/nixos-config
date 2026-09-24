@@ -1,0 +1,24 @@
+{
+  "date": "2026-09-21",
+  "old_toplevel": "/nix/store/abcz9k3l5ynhxjplr1vhm54mwfzi3qn2-nixos-system-nixos-26.05.20260918.cf9d2fb",
+  "new_toplevel": "/nix/store/21wk5bw65p66bs0apx4ad7jjf4pz73bx-nixos-system-nixos-26.05.20260918.cf9d2fb",
+  "matched_fields": [
+    "filesystems",
+    "groups",
+    "hostname",
+    "initrd",
+    "kernel",
+    "kernelModules",
+    "locale",
+    "packages",
+    "services",
+    "sessionVariables",
+    "stateVersion",
+    "timezone"
+  ],
+  "home_manager_embedded": false,
+  "system_build": "passed",
+  "home_build": "passed",
+  "flake_check_no_build": "passed",
+  "activated": false
+}

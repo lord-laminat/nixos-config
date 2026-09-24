@@ -1,0 +1,22 @@
+--- a/scripts/inir
++++ b/scripts/inir
+@@ -1643,7 +1643,9 @@ apply_niri_app_environment() {
+     for name in XDG_MENU_PREFIX QT_QPA_PLATFORM QT_QPA_PLATFORMTHEME \
+                 QT_STYLE_OVERRIDE ELECTRON_OZONE_PLATFORM_HINT; do
+         value="$(_niri_app_environment_value "$name" "$cfg")"
+-        [[ -n "$value" ]] && export "${name}=${value}"
++        if [[ -n "$value" ]]; then
++            export "${name}=${value}"
++        fi
+     done
+ }
+ 
+@@ -1809,7 +1811,7 @@
+         local _qs_sys_path
+         _qs_sys_path="$(grep '^PATH=' <<< "$_qs_sys_env" | head -1 | cut -d= -f2- || true)"
+         if [[ -n "$_qs_sys_path" && "$_qs_sys_path" != "$PATH" ]]; then
+-            local _qs_merged="$_qs_sys_path"
++            local _qs_merged="$PATH:$_qs_sys_path"
+             for _qs_p in /usr/local/bin /usr/bin; do
+                 case ":${_qs_merged}:" in
+                     *":${_qs_p}:"*) ;;
