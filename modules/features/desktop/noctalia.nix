@@ -20,6 +20,7 @@
         };
         theme = {
           source = "wallpaper";
+          pure_black_dark = false;
           templates = lib.mkIf config.programs.ghostty.enable {
             enable_builtin_templates = true;
             builtin_ids = [ "ghostty" ];
