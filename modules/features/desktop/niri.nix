@@ -1,57 +1,17 @@
-{ inputs, ... }:
+{ ... }:
 {
-  flake.modules.nixos.niri = { config, pkgs, ... }: {
-    imports = [ inputs.inir.nixosModules.inir ];
+  flake.modules.nixos.niri = { pkgs, ... }: {
     programs.niri.enable = true;
-    programs.inir = {
-      enable = true;
-      # The upstream launcher uses set -e; absent optional variables must succeed.
-      package =
-        (pkgs.callPackage (inputs.inir + "/nix/package.nix") { inherit pkgs; }).overrideAttrs
-          (old: {
-            patches = (old.patches or [ ]) ++ [ ../../../packages/inir/environment.patch ];
-            # Keep helpers available for manual launches as well as the service.
-            postFixup = (old.postFixup or "") + ''
-              wrapProgram "$out/bin/inir" \
-                --prefix PATH : "${pkgs.lib.makeBinPath config.programs.inir.extraPackages}"
-            '';
-          });
-      service.compositor = "niri";
-      extraPackages = [
-        config.programs.niri.package
-        pkgs.swayidle
-        pkgs.libsecret
-        pkgs.matugen
-        pkgs.awww
-        pkgs.gowall
-        pkgs.which
-        pkgs.go
-      ];
-    };
-    security.polkit.enable = true;
-    services.upower.enable = true;
-    services.power-profiles-daemon.enable = true;
-    security.rtkit.enable = true;
-    services.pipewire = {
-      enable = true;
-      alsa.enable = true;
-      pulse.enable = true;
-    };
-    # iNiR also runs login shells, which rebuild PATH from system profiles.
-    environment.systemPackages = config.programs.inir.extraPackages ++ (with pkgs; [
-      brightnessctl
-      xwayland-satellite
-      lxqt.lxqt-policykit
-    ]);
+    environment.systemPackages = with pkgs; [ brightnessctl xwayland-satellite ];
     environment.sessionVariables.NIXOS_OZONE_WL = "1";
   };
 
-  flake.modules.homeManager.niri = { pkgs, ... }: {
+  flake.modules.homeManager.niri = { pkgs, lib, ... }: {
     home.packages = [ pkgs.yazi ];
-    xdg.configFile."niri/config.kdl".source = ../../../assets/niri/config.kdl;
-    xdg.configFile."niri/config.d" = {
-      source = ../../../assets/niri/config.d;
-      recursive = true;
+    xdg.configFile = lib.mapAttrs' (name: _: lib.nameValuePair "niri/config.d/${name}" {
+      source = ../../../assets/niri/config.d + "/${name}";
+    }) (builtins.readDir ../../../assets/niri/config.d) // {
+      "niri/config.kdl".text = builtins.readFile ../../../assets/niri/config.kdl;
     };
   };
 }

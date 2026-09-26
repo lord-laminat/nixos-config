@@ -1,0 +1,28 @@
+layer-rule {
+    match namespace="^quickshell$"
+    place-within-backdrop true
+}
+
+binds {
+    Ctrl+Alt+Delete hotkey-overlay-title="Task Manager" { spawn "inir" "overlay" "tool" "resources" "toggle"; }
+    Mod+M hotkey-overlay-title="Task Manager" { spawn "inir" "overlay" "tool" "resources" "toggle"; }
+    Mod+N hotkey-overlay-title="Notification Center" { spawn "inir" "overlay" "tool" "notifications" "toggle"; }
+    Mod+Shift+N hotkey-overlay-title="Notepad" { spawn "inir" "overlay" "tool" "notes" "toggle"; }
+    Mod+V hotkey-overlay-title="Clipboard Manager" { spawn "inir" "clipboard" "toggle"; }
+    Mod+Y hotkey-overlay-title="Browse Wallpapers" { spawn "inir" "wallpaperSelector" "toggle"; }
+    Super+A hotkey-overlay-title="Application Launcher" { spawn "inir" "overview" "toggle"; }
+    Super+I hotkey-overlay-title="Settings" { spawn "inir" "settings"; }
+    Super+L hotkey-overlay-title="Lock Screen" { spawn "inir" "lock" "activate"; }
+    Super+X hotkey-overlay-title="Power Menu: Toggle" { spawn "inir" "session" "toggle"; }
+    Super+space hotkey-overlay-title="Application Launcher" { spawn "inir" "overview" "toggle"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn "inir" "audio" "volumeDown"; }
+    XF86AudioMicMute allow-when-locked=true { spawn "inir" "audio" "micMute"; }
+    XF86AudioMute allow-when-locked=true { spawn "inir" "audio" "mute"; }
+    XF86AudioNext allow-when-locked=true { spawn "inir" "mpris" "next"; }
+    XF86AudioPause allow-when-locked=true { spawn "inir" "mpris" "playPause"; }
+    XF86AudioPlay allow-when-locked=true { spawn "inir" "mpris" "playPause"; }
+    XF86AudioPrev allow-when-locked=true { spawn "inir" "mpris" "previous"; }
+    XF86AudioRaiseVolume allow-when-locked=true { spawn "inir" "audio" "volumeUp"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn "inir" "brightness" "decrement"; }
+    XF86MonBrightnessUp allow-when-locked=true { spawn "inir" "brightness" "increment"; }
+}

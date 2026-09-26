@@ -36,8 +36,10 @@
         ./modules/features/system/locale.nix
         ./modules/features/system/utilities.nix
         ./modules/features/desktop/ly.nix
+        ./modules/features/desktop/desktop-services.nix
+        ./modules/features/desktop/inir.nix
         ./modules/features/desktop/niri.nix
-        ./modules/features/desktop/noctalia-shell.nix
+        ./modules/features/desktop/noctalia.nix
         ./modules/features/desktop/terminal.nix
         ./modules/features/applications/firefox.nix
         ./modules/features/applications/happ.nix

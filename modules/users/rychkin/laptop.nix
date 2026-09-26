@@ -3,6 +3,7 @@
     imports = with config.flake.modules.homeManager; [
       rychkin
       niri
+      noctalia
       obsidian
       ayugram
       terminal

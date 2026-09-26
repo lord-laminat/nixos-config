@@ -12,6 +12,8 @@ in
       bluetooth
       locale
       utilities
+      desktop-services
+      niri
       noctalia
       terminal
       firefox
