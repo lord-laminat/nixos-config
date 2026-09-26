@@ -41,3 +41,17 @@ noctalia msg status
 Чтобы вернуться к iNiR, замените `noctalia` на `inir` в импортах
 `modules/hosts/laptop/default.nix` и `modules/users/rychkin/laptop.nix`,
 затем примените обе конфигурации и перезайдите в сессию.
+
+## Цвета терминала
+
+Noctalia генерирует тему Ghostty `noctalia` из текущей палитры. Модуль
+оболочки выбирает эту тему; iNiR отдельно выбирает `ii-auto`.
+Starship использует ANSI-цвета терминала без старой `ii-palette.toml`.
+Home Manager больше не создаёт `starship.toml`, поэтому включённый через
+интерфейс Noctalia шаблон Starship также может генерировать свою палитру.
+
+После применения Home Manager выполните `noctalia msg templates-apply`.
+При необходимости перезагрузите конфигурацию Ghostty через Ctrl+Shift+,.
+Настройки из интерфейса Noctalia имеют приоритет над декларативными:
+в разделе Templates должен быть включён Ghostty, а для цветов из обоев
+источником палитры должен быть Wallpaper.

@@ -31,7 +31,10 @@
     environment.systemPackages = config.programs.inir.extraPackages ++ [ pkgs.lxqt.lxqt-policykit ];
   };
 
-  flake.modules.homeManager.inir = { lib, ... }: {
+  flake.modules.homeManager.inir = { config, lib, ... }: {
+    programs.ghostty.settings = lib.mkIf config.programs.ghostty.enable {
+      theme = "ii-auto";
+    };
     xdg.configFile."niri/config.kdl".text = lib.mkAfter ''
       include "inir.kdl"
     '';

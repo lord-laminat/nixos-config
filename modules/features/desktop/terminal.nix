@@ -18,9 +18,7 @@
       enable = true;
       enableNushellIntegration = true;
 
-      settings = {
-        palette = "ii-palette.toml";
-      };
+      # ANSI colors follow the terminal palette supplied by the desktop shell.
     };
 
     programs.ghostty = {
@@ -29,7 +27,6 @@
         command = "nu";
         background-opacity = 0.9;
         background-blur-radius = 20;
-        theme = "ii-auto";
       };
     };
   };
