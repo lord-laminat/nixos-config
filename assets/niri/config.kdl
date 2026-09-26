@@ -237,6 +237,12 @@ window-rule {
     xray true
   }
 }
+// VS Code: opacity applies to the entire window, including text.
+window-rule {
+    match app-id="^code$"
+    opacity 0.8
+    draw-border-with-background false
+}
 window-rule {
     // This regular expression is intentionally made as specific as possible,
     // since this is the default config, and we want no false positives.
