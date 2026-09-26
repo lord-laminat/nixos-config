@@ -55,3 +55,24 @@ Home Manager больше не создаёт `starship.toml`, поэтому в
 Настройки из интерфейса Noctalia имеют приоритет над декларативными:
 в разделе Templates должен быть включён Ghostty, а для цветов из обоев
 источником палитры должен быть Wallpaper.
+
+## VS Code
+
+При совместном подключении модулей `vscode` и `noctalia` Home Manager
+устанавливает NoctaliaTheme 0.0.5 из закреплённого VSIX через CLI редактора.
+Каталог расширения остаётся доступным для записи: Noctalia обновляет
+`themes/NoctaliaTheme-color-theme.json` при изменении палитры.
+Шаблон сообщества закреплён на конкретной ревизии в `noctalia.nix`;
+включать community-шаблон VSCode в интерфейсе дополнительно не нужно.
+Версия расширения и путь вывода шаблона должны обновляться вместе.
+
+На новой машине один раз выберите **Preferences: Color Theme → NoctaliaTheme**.
+Существующий `settings.json` и остальные расширения остаются под управлением
+редактора. После применения Home Manager выполните:
+
+```sh
+noctalia msg config-reload
+noctalia msg templates-apply
+```
+
+Если открытый редактор не обновил цвета, выполните **Developer: Reload Window**.
