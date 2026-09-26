@@ -1,9 +1,13 @@
 { inputs, ... }:
 {
-  flake.modules.nixos.niri = { config, pkgs, ... }: {
-    imports = [ inputs.inir.nixosModules.inir ];
+  flake.modules.nixos.noctalia = { config, pkgs, ... }: {
+    imports = [ inputs.noctalia.nixosModules.noctalia ];
+    
     programs.niri.enable = true;
-    programs.inir = {
+    programs.noctalia = {
+      enable = true;
+      settings = {
+programs.inir = {
       enable = true;
       # The upstream launcher uses set -e; absent optional variables must succeed.
       package =
@@ -28,6 +32,8 @@
         pkgs.go
       ];
     };
+      };
+    };
     security.polkit.enable = true;
     services.upower.enable = true;
     services.power-profiles-daemon.enable = true;
@@ -37,7 +43,6 @@
       alsa.enable = true;
       pulse.enable = true;
     };
-    # iNiR also runs login shells, which rebuild PATH from system profiles.
     environment.systemPackages = config.programs.inir.extraPackages ++ (with pkgs; [
       brightnessctl
       xwayland-satellite

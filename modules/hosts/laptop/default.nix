@@ -12,7 +12,7 @@ in
       bluetooth
       locale
       utilities
-      niri
+      noctalia
       terminal
       firefox
       happ

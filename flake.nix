@@ -18,6 +18,10 @@
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs";
     };
+    noctalia = {
+      url = "github:noctalia-dev/noctalia";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs =
     inputs:
@@ -33,6 +37,7 @@
         ./modules/features/system/utilities.nix
         ./modules/features/desktop/ly.nix
         ./modules/features/desktop/niri.nix
+        ./modules/features/desktop/noctalia-shell.nix
         ./modules/features/desktop/terminal.nix
         ./modules/features/applications/firefox.nix
         ./modules/features/applications/happ.nix

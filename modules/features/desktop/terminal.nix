@@ -17,6 +17,10 @@
     programs.starship = {
       enable = true;
       enableNushellIntegration = true;
+
+      settings = {
+        palette = "ii-palette.toml";
+      };
     };
 
     programs.ghostty = {
