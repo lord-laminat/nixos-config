@@ -17,15 +17,13 @@
     programs.starship = {
       enable = true;
       enableNushellIntegration = true;
-
-      # ANSI colors follow the terminal palette supplied by the desktop shell.
     };
 
     programs.ghostty = {
       enable = true;
       settings = {
         command = "nu";
-        background-opacity = 0.9;
+        background-opacity = 0.8;
         background-blur-radius = 20;
       };
     };

@@ -1,18 +1,20 @@
 
-        layout {
-        gaps 6
+layout {
+  always-center-single-column
+  gaps 6
 
-        border {
-        width 1
-        }
+  border {
+    width 1
+  }
 
-        focus-ring {
-        width 1
-        }
-        }
-        window-rule {
-        geometry-corner-radius 12
-        clip-to-geometry true
-        tiled-state true
-        draw-border-with-background false
-        }
+  focus-ring {
+    width 1
+  }
+}
+
+window-rule {
+  geometry-corner-radius 12
+  clip-to-geometry true
+  tiled-state true
+  draw-border-with-background false
+}
