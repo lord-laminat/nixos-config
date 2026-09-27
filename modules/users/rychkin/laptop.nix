@@ -13,6 +13,7 @@
       dotnet
       python
       c-cpp
+      stm32
       tools
       aflplusplus
     ];

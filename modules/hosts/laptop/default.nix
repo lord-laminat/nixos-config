@@ -21,6 +21,7 @@ in
       codex
       ly
       docker
+      stm32
       virtualbox
     ];
     networking.hostName = "nixos";

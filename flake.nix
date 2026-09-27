@@ -49,6 +49,7 @@
         ./modules/features/applications/libreoffice.nix
         ./modules/features/development/vscode.nix
         ./modules/features/development/zed.nix
+        ./modules/features/development/stm32.nix
         ./modules/features/development/neovim.nix
         ./modules/features/development/dotnet.nix
         ./modules/features/development/python.nix
