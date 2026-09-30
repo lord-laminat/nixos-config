@@ -4,13 +4,13 @@
       openocd
     ];
 
-    users.users.rychkin.extraGroups = [ "dialout" "plugdev" ]
+    users.users.rychkin.extraGroups = [ "dialout" "plugdev" ];
   };
 
-  flake.modules.homeManager.stm32 = { pkgs, ... }: {
+  flake.modules.homeManager.stm32 = { pkgs, lib, ... }: {
     home.packages = with pkgs; [
       stm32cubemx
-      gcc-arm-embedded
+      ( lib.lowPrio gcc-arm-embedded )
       cmake
       ninja
       openocd
