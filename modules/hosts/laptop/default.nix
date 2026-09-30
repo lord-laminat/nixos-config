@@ -26,6 +26,11 @@ in
     networking.hostName = "nixos";
     system.stateVersion = "26.05";
     boot.loader.systemd-boot.enable = true;
+    boot.loader.systemd-boot.configurationLimit = 1;
+    boot.loader.systemd-boot.extraInstallCommands = ''
+      echo "auto-firmware no" >> /boot/loader/loader.conf
+    '';
+    boot.loader.timeout = 0;
     boot.loader.efi.canTouchEfiVariables = true;
     nixpkgs.config.allowUnfree = true;
   };

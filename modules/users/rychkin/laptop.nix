@@ -16,5 +16,15 @@
       tools
       aflplusplus
     ];
+    home.file.".local/bin/to-win" = {
+      executable = true;
+      force = true;
+      text = ''
+        #!/bin/sh
+        set -e
+        sudo bootctl set-oneshot auto-windows
+        systemctl reboot
+      '';
+    };
   };
 }
